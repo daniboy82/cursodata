@@ -4,22 +4,19 @@ package com.fiap.demo;
 import com.fiap.demo.model.CursoRepository;
 import com.fiap.demo.model.CursoEntity;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
-@RequestMapping("/curso")
+
 @RestController
 public class CursoController {
 
     @Autowired
     CursoRepository cursoRepo;
 
-
-      public CursoEntity criar(@RequestBody CursoEntity curso){
+    @RequestMapping(value = "/api/curso", method = RequestMethod.POST)
+    public CursoEntity criar(@RequestBody CursoEntity curso){
 
         cursoRepo.save(curso);
 
@@ -27,7 +24,7 @@ public class CursoController {
 
     }
 
-    @RequestMapping(method = RequestMethod.GET)
+    @RequestMapping("/api/curso")
     public List<CursoEntity>  obterTodos(){
         return cursoRepo.findAll();
     }
