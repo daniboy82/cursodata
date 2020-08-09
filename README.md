@@ -1,3 +1,5 @@
-# Projeto Spring Boot hello world
+# Projet Spring Boot hello world
 
-Nesse projeto temos algumas entidades no banco, seus jpaRepositories e a criação de endpoints REST para expô-las.
+
+
+In this project we have some jpa entities to access db, their jpaRepositories and classes with REST endpoints to expose the operations on it.
